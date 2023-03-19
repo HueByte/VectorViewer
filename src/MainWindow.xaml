@@ -5,9 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VectorViewer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Icon="/Hue5.png">
+        Title="MainWindow" Height="900" Width="1000" Icon="/Hue5.png">
     <Grid>
-        <Canvas Name="MainCanvas" Grid.ColumnSpan="4">
-        </Canvas>
+        <Border Name="Container" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="1" BorderBrush="Aquamarine">
+            <Canvas Name="MainCanvas" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Width="0" Height="0"
+                    RenderTransform="1 0 0 -1 0 0">
+            </Canvas>
+        </Border>
     </Grid>
 </Window>

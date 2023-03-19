@@ -1,5 +1,5 @@
 ﻿using System.Text.Json.Serialization;
-using System.Windows.Media;
+using VectorViewer.JsonConverters;
 using Drawing = System.Drawing;
 
 namespace VectorViewer.Models
