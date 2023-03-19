@@ -100,6 +100,8 @@ namespace VectorViewer
         {
             MainCanvas.Children.Clear();
             ScaleCanvas();
+
+            // For a nice appearing effect, remove later?
             foreach (var shape in Shapes) { shape.Draw(); await Task.Delay(100); }
         }
 
