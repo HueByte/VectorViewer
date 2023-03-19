@@ -7,6 +7,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using VectorViewer.Constants;
 using VectorViewer.VectorShapes;
 
 namespace VectorViewer
@@ -17,9 +18,11 @@ namespace VectorViewer
         private string _fileExtension = "";
         public InputManager() 
         {
+            var test = string.Join(';', SupportedExtensions.ALL.Select(ext => ext.Insert(0, "*")));
+
             OpenFileDialog ofd = new()
             {
-                Filter = "Input Files|*.json;*.xml"
+                Filter = $"Input Files|{string.Join(';', SupportedExtensions.ALL.Select(ext => ext.Insert(0, "*")))}"
             };
 
             if (ofd.ShowDialog() == true)
@@ -33,11 +36,10 @@ namespace VectorViewer
         {
             switch(_fileExtension)
             {
-                case ".json":
+                case SupportedExtensions.JSON:
                     return JsonSerializer.Deserialize<ViewerShape[]>(_input) ?? Enumerable.Empty<ViewerShape>();
-                case ".xml":
+                //case SupportedExtensions.XML
                     //return XmlSerializer...;
-                    return Enumerable.Empty<ViewerShape>();
                 default:
                     throw new Exception("Invalid file extension");
             }
