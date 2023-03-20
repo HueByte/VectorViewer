@@ -10,7 +10,7 @@ namespace VectorViewer.VectorShapes
     [ShapeType("circle")]
     public sealed class CanvasCircle : ViewerShape
     {
-        public override string Type => "Circle";
+        public override string Type { get; } = "Circle";
 
         [JsonPropertyName("center")]
         public Point Center { get; set; }

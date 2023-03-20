@@ -9,7 +9,7 @@ namespace VectorViewer.VectorShapes
     [ShapeType("line")]
     public sealed class CanvasLine : ViewerShape
     {
-        public override string Type => "Line";
+        public override string Type { get; } = "Line";
 
         [JsonPropertyName("a")]
         public Point Start { get; set; }

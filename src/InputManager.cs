@@ -18,8 +18,6 @@ namespace VectorViewer
         private string _fileExtension = "";
         public InputManager() 
         {
-            var test = string.Join(';', SupportedExtensions.ALL.Select(ext => ext.Insert(0, "*")));
-
             OpenFileDialog ofd = new()
             {
                 Filter = $"Input Files|{string.Join(';', SupportedExtensions.ALL.Select(ext => ext.Insert(0, "*")))}"
